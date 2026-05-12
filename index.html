@@ -1,0 +1,1330 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ContaFacil ERP — Sistema de Gestao Mocambicano</title>
+  <meta name="description" content="O unico ERP 100% modular desenvolvido em Mocambique. Faturacao com Selagem Digital, Gestao de ONGs, SAF-T MZ e Inteligencia Fiscal.">
+  <meta name="keywords" content="ERP, Mocambique, ContaFacil, Gestao, Faturacao, ONG, SAF-T, Selagem Digital">
+  <meta property="og:title" content="ContaFacil ERP — Sistema de Gestao Mocambicano">
+  <meta property="og:description" content="O unico ERP 100% modular desenvolvido em Mocambique.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_MZ">
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="1024x1024" href="/favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/icon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/icon-16x16.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Geist', 'Inter', 'system-ui', '-apple-system', 'sans-serif'],
+            mono: ['Geist Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="min-h-screen bg-[#060d1b] text-white overflow-x-hidden">
+
+  <!-- ═══════════════════════════════════════════
+       NAVBAR
+       ═══════════════════════════════════════════ -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 h-[68px] flex items-center justify-between px-[5%] transition-all duration-300 bg-transparent">
+    <a href="#hero" class="flex items-center gap-2.5 no-underline">
+      <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-blue-600 to-blue-500 flex items-center justify-center font-extrabold text-[13px] text-white tracking-tight shadow-lg shadow-blue-500/30">
+        CF
+      </div>
+      <span class="font-bold text-[16px] text-white tracking-tight">
+        Conta<span class="text-blue-400">Facil</span> ERP
+      </span>
+    </a>
+
+    <!-- Desktop Nav -->
+    <ul class="hidden lg:flex items-center gap-1 list-none" id="nav-links-desktop">
+      <li><a href="#diferencial" class="nav-link">Modular</a></li>
+      <li><a href="#modulos" class="nav-link">Modulos</a></li>
+      <li><a href="#dashboard-ao-vivo" class="nav-link">Dashboard</a></li>
+      <li><a href="#relatorios" class="nav-link">Relatorios</a></li>
+      <li><a href="#pos" class="nav-link">POS</a></li>
+      <li><a href="#planos" class="nav-link">Planos</a></li>
+      <li><a href="#sobre" class="nav-link">Sobre</a></li>
+      <li>
+        <a href="https://wa.me/258849371782?text=Ola!%20Quero%20saber%20mais%20sobre%20o%20ContaFacil%20ERP" target="_blank" class="nav-cta-btn">
+          Demo Gratis
+        </a>
+      </li>
+    </ul>
+
+    <!-- Mobile Menu Button -->
+    <button id="mobile-menu-btn" class="lg:hidden flex flex-col gap-[5px] cursor-pointer p-2 bg-transparent border-none" aria-label="Menu">
+      <span class="hamburger-line" id="hb1"></span>
+      <span class="hamburger-line" id="hb2"></span>
+      <span class="hamburger-line" id="hb3"></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="fixed top-[68px] left-0 right-0 z-40 bg-[#080e1e]/98 backdrop-blur-xl border-b border-white/[0.06] p-4 px-[5%] pb-6 shadow-xl flex-col gap-1 lg:hidden mobile-menu-hidden">
+    <a href="#diferencial" class="mobile-nav-link">Modular</a>
+    <a href="#modulos" class="mobile-nav-link">Modulos</a>
+    <a href="#dashboard-ao-vivo" class="mobile-nav-link">Dashboard</a>
+    <a href="#relatorios" class="mobile-nav-link">Relatorios</a>
+    <a href="#pos" class="mobile-nav-link">POS</a>
+    <a href="#planos" class="mobile-nav-link">Planos</a>
+    <a href="#sobre" class="mobile-nav-link">Sobre</a>
+    <a href="https://wa.me/258849371782?text=Ola!%20Quero%20uma%20demonstracao%20do%20ContaFacil%20ERP" target="_blank" class="mobile-cta-btn">
+      Solicitar Demonstracao
+    </a>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       HERO CAROUSEL
+       ═══════════════════════════════════════════ -->
+  <section id="hero" class="relative min-h-screen flex items-center overflow-hidden">
+    <!-- Background Carousel Images -->
+    <div class="carousel-bg-slide" data-slide="0" style="background-image: url('/slide-empresa.jpg'); opacity: 1;">
+      <div class="carousel-bg-overlay"></div>
+    </div>
+    <div class="carousel-bg-slide" data-slide="1" style="background-image: url('/slide-ong.jpg'); opacity: 0;">
+      <div class="carousel-bg-overlay"></div>
+    </div>
+    <div class="carousel-bg-slide" data-slide="2" style="background-image: url('/slide-stock.jpg'); opacity: 0;">
+      <div class="carousel-bg-overlay"></div>
+    </div>
+
+    <!-- Grid -->
+    <div class="hero-grid"></div>
+
+    <!-- Orbs -->
+    <div class="hero-orb hero-orb-1"></div>
+    <div class="hero-orb hero-orb-2"></div>
+
+    <!-- Scan line -->
+    <div class="hero-scan-line">
+      <div class="scan-line-bar"></div>
+    </div>
+
+    <!-- Content -->
+    <div class="relative z-10 w-full max-w-[1200px] mx-auto px-[5%] pt-[120px] pb-[100px]">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+        <!-- Left: Text -->
+        <div class="max-w-[750px]">
+          <!-- Badge -->
+          <div class="hero-badge animate-fade-down">
+            <div class="w-[7px] h-[7px] rounded-full bg-amber-400 pulse-glow-dot"></div>
+            Beira, Sofala — Mocambique
+          </div>
+
+          <!-- Title (changes per slide) -->
+          <h1 id="hero-title" class="hero-title animate-fade-up">
+            O Seu Negocio.<br>
+            <span class="hero-title-gradient">Mais Inteligente.</span><br>
+            Mais Lucrativo.
+          </h1>
+
+          <!-- Subtitle (changes per slide) -->
+          <p id="hero-subtitle" class="hero-subtitle animate-fade-up-delay">
+            Automatize a sua contabilidade, elimine erros humanos e foque no que realmente importa — fazer crescer o seu negocio. O ERP que as empresas de sucesso em Mocambique estao a usar.
+          </p>
+
+          <!-- Tag -->
+          <div id="hero-tag" class="hero-tag animate-fade-up-delay-2">
+            Para Empresas
+          </div>
+
+          <!-- CTA Buttons -->
+          <div class="flex gap-3 flex-wrap mt-6 animate-fade-up-delay-3">
+            <a href="https://wa.me/258849371782?text=Ola!%20Quero%20uma%20demonstracao%20do%20ContaFacil%20ERP" target="_blank" class="hero-cta-primary">
+              <i data-lucide="message-circle" class="w-4 h-4"></i>
+              <span id="hero-cta-text">Entrar</span>
+            </a>
+            <a href="#dashboard-ao-vivo" class="hero-cta-secondary">
+              <i data-lucide="eye" class="w-4 h-4"></i>
+              Ver Dashboard
+            </a>
+          </div>
+
+          <!-- Stats -->
+          <div class="flex gap-8 mt-11 pt-11 border-t border-white/10 flex-wrap animate-fade-up-delay-4">
+            <div>
+              <div class="font-bold text-[27px] text-white font-mono">42</div>
+              <div class="text-[11.5px] text-white/35 mt-0.5">Modulos Disponiveis</div>
+            </div>
+            <div>
+              <div class="font-bold text-[27px] text-white font-mono">3</div>
+              <div class="text-[11.5px] text-white/35 mt-0.5">Regimes Fiscais</div>
+            </div>
+            <div>
+              <div class="font-bold text-[27px] text-white font-mono">SHA-1</div>
+              <div class="text-[11.5px] text-white/35 mt-0.5">Selagem Digital</div>
+            </div>
+            <div>
+              <div class="font-bold text-[27px] text-white font-mono">SAF-T</div>
+              <div class="text-[11.5px] text-white/35 mt-0.5">Conformidade AT</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Laptop Mockup -->
+        <div class="hidden lg:block" id="laptop-container">
+          <div class="laptop-mockup">
+            <div class="laptop-glow"></div>
+            <div class="laptop-body">
+              <div class="laptop-bezel">
+                <div class="laptop-notch"></div>
+                <div class="laptop-screen">
+                  <img id="laptop-img" src="/pos-dashboard-real.png" alt="ContaFacil ERP Dashboard" class="w-full h-auto block">
+                </div>
+              </div>
+              <div class="laptop-base">
+                <div class="laptop-base-top"></div>
+                <div class="laptop-base-bottom"></div>
+              </div>
+              <div class="laptop-reflection"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Indicators -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex gap-3" id="carousel-indicators">
+      <button class="carousel-dot active" data-idx="0" aria-label="Slide 1"></button>
+      <button class="carousel-dot" data-idx="1" aria-label="Slide 2"></button>
+      <button class="carousel-dot" data-idx="2" aria-label="Slide 3"></button>
+    </div>
+
+    <!-- Progress bar -->
+    <div class="absolute bottom-0 left-0 right-0 z-10 h-[2px] bg-white/[0.06]">
+      <div id="carousel-progress" class="h-full bg-gradient-to-r from-amber-500 via-amber-400 to-sky-400 progress-bar-anim"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       DIFERENCIAL MODULAR
+       ═══════════════════════════════════════════ -->
+  <section id="diferencial" class="section-ice relative overflow-hidden py-24 px-[5%]">
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute inset-0" style="background: radial-gradient(ellipse at 30% 50%, rgba(37,99,235,0.06) 0%, transparent 55%), radial-gradient(ellipse at 80% 20%, rgba(255,255,255,0.02) 0%, transparent 40%)"></div>
+    </div>
+    <div class="relative z-10 max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div class="reveal-on-scroll">
+        <div class="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/20 text-amber-400 text-[11.5px] font-bold tracking-[0.9px] uppercase px-3.5 py-1.5 rounded-full mb-5">
+          <i data-lucide="toggle-left" class="w-4 h-4"></i>
+          Inovacao Unica
+        </div>
+        <h2 class="text-[clamp(1.9rem,3.8vw,2.9rem)] font-extrabold text-white mb-4 tracking-[-0.5px]">
+          Sistema <span class="bg-gradient-to-r from-slate-800 via-blue-600 to-amber-500 bg-clip-text text-transparent">100% Ativavel</span> — Pague so o que usa
+        </h2>
+        <p class="text-[16px] text-white/50 max-w-[580px] leading-[1.75] mb-8">
+          Nenhum outro ERP em Mocambique oferece esta flexibilidade. Active e desactive modulos num clique. O preco ajusta-se automaticamente. Nao paga por funcionalidades que a sua empresa nao precisa agora — mas pode ativar amanha se crescer.
+        </p>
+        <a href="#planos" class="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500 to-amber-400 text-gray-900 no-underline px-6 py-3.5 rounded-xl text-[14.5px] font-semibold transition-all duration-300 shadow-lg shadow-amber-500/30 hover:from-amber-400 hover:to-amber-300 hover:-translate-y-0.5">
+          Ver Planos de Precos
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+      </div>
+
+      <div class="reveal-on-scroll">
+        <div class="module-toggle-card">
+          <div class="flex items-center gap-3 mb-5 pb-5 border-b border-white/[0.06]">
+            <i data-lucide="settings" class="w-[18px] h-[18px] text-sky-400"></i>
+            <span class="font-bold text-[15px] text-white flex-1">O meu plano — Modulos ativos</span>
+            <span id="active-count-badge" class="bg-amber-500/15 text-amber-300 text-[11px] font-bold px-3 py-1 rounded-full">5 ativos</span>
+          </div>
+          <div class="flex flex-col gap-2.5" id="toggle-modules">
+            <div class="toggle-module-item active" data-idx="0">
+              <div class="flex items-center gap-3">
+                <span class="text-[18px]">📊</span>
+                <span class="text-[13.5px] font-medium text-white">Dashboard</span>
+              </div>
+              <div class="toggle-switch active"></div>
+            </div>
+            <div class="toggle-module-item active" data-idx="1">
+              <div class="flex items-center gap-3">
+                <span class="text-[18px]">📒</span>
+                <span class="text-[13.5px] font-medium text-white">Plano de Contas</span>
+              </div>
+              <div class="toggle-switch active"></div>
+            </div>
+            <div class="toggle-module-item active" data-idx="2">
+              <div class="flex items-center gap-3">
+                <span class="text-[18px]">👥</span>
+                <span class="text-[13.5px] font-medium text-white">Clientes & Vendas</span>
+              </div>
+              <div class="toggle-switch active"></div>
+            </div>
+            <div class="toggle-module-item active" data-idx="3">
+              <div class="flex items-center gap-3">
+                <span class="text-[18px]">📦</span>
+                <span class="text-[13.5px] font-medium text-white">Inventario & Stock</span>
+              </div>
+              <div class="toggle-switch active"></div>
+            </div>
+            <div class="toggle-module-item active" data-idx="4">
+              <div class="flex items-center gap-3">
+                <span class="text-[18px]">👷</span>
+                <span class="text-[13.5px] font-medium text-white">Folha de Salarios</span>
+              </div>
+              <div class="toggle-switch active"></div>
+            </div>
+            <div class="toggle-module-item" data-idx="5">
+              <div class="flex items-center gap-3">
+                <span class="text-[18px]">🛒</span>
+                <span class="text-[13.5px] font-medium text-white/60">POS Offline-First</span>
+              </div>
+              <div class="toggle-switch"></div>
+            </div>
+            <div class="toggle-module-item" data-idx="6">
+              <div class="flex items-center gap-3">
+                <span class="text-[18px]">📲</span>
+                <span class="text-[13.5px] font-medium text-white/60">M-Pesa Integrado</span>
+              </div>
+              <div class="toggle-switch"></div>
+            </div>
+            <div class="toggle-module-item" data-idx="7">
+              <div class="flex items-center gap-3">
+                <span class="text-[18px]">🌍</span>
+                <span class="text-[13.5px] font-medium text-white/60">Subvencoes & ONG</span>
+              </div>
+              <div class="toggle-switch"></div>
+            </div>
+          </div>
+          <div class="mt-5 p-3.5 bg-amber-500/10 border border-amber-500/20 rounded-xl flex items-center gap-3">
+            <i data-lucide="piggy-bank" class="w-4 h-4 text-amber-400"></i>
+            <span class="text-[12.5px] text-white/50 flex-1">
+              Com <strong class="text-amber-300" id="savings-count">5</strong> modulos ativos, poupa ate
+              <strong class="text-amber-300">MT 1.200/mes</strong> vs plano All-in-One
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       MODULOS COMPLETOS
+       ═══════════════════════════════════════════ -->
+  <section id="modulos" class="section-ice py-24 px-[5%]">
+    <div class="max-w-[1200px] mx-auto">
+      <div class="text-center max-w-[640px] mx-auto mb-14 reveal-on-scroll">
+        <div class="inline-flex items-center gap-2 bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-[11.5px] font-bold tracking-[0.9px] uppercase px-3.5 py-1.5 rounded-full mb-5">
+          <i data-lucide="layers" class="w-4 h-4"></i>
+          42 Modulos
+        </div>
+        <h2 class="text-[clamp(1.9rem,3.8vw,2.9rem)] font-extrabold text-white mb-4 tracking-[-0.5px]">
+          Tudo o que a sua empresa <span class="bg-gradient-to-r from-blue-300 via-sky-200 to-white bg-clip-text text-transparent">alguma vez precisara</span>
+        </h2>
+        <p class="text-[16px] text-white/50 max-w-[580px] mx-auto leading-[1.75]">
+          Do micro-negocio a grande organizacao — modulos organizados por area funcional, cada um com proposito claro.
+        </p>
+      </div>
+
+      <!-- Core Modules -->
+      <div class="mb-12">
+        <div class="reveal-on-scroll">
+          <div class="flex items-center gap-3 mb-5">
+            <span class="bg-blue-500 text-white text-[10px] font-bold tracking-[0.8px] uppercase px-2.5 py-1 rounded-full">Core</span>
+            <div class="h-px bg-white/[0.06] flex-1"></div>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
+          <div class="module-card reveal-on-scroll">
+            <div class="flex items-center gap-2.5 mb-3">
+              <span class="text-[22px] text-sky-400"><i data-lucide="bar-chart-3" class="w-5 h-5"></i></span>
+              <span class="text-[9px] font-bold tracking-[0.8px] uppercase bg-amber-500/10 text-amber-400 px-2 py-0.5 rounded">Core</span>
+            </div>
+            <div class="font-bold text-[13px] text-white mb-1.5">Dashboard</div>
+            <div class="text-[12px] text-white/50 leading-[1.55]">Visao geral do negocio com KPIs em tempo real</div>
+          </div>
+          <div class="module-card reveal-on-scroll">
+            <div class="flex items-center gap-2.5 mb-3">
+              <span class="text-[22px] text-sky-400"><i data-lucide="wallet" class="w-5 h-5"></i></span>
+              <span class="text-[9px] font-bold tracking-[0.8px] uppercase bg-amber-500/10 text-amber-400 px-2 py-0.5 rounded">Core</span>
+            </div>
+            <div class="font-bold text-[13px] text-white mb-1.5">Resumo Financeiro</div>
+            <div class="text-[12px] text-white/50 leading-[1.55]">Balanco e DRE com drill-down por conta</div>
+          </div>
+          <div class="module-card reveal-on-scroll">
+            <div class="flex items-center gap-2.5 mb-3">
+              <span class="text-[22px] text-sky-400"><i data-lucide="settings" class="w-5 h-5"></i></span>
+              <span class="text-[9px] font-bold tracking-[0.8px] uppercase bg-amber-500/10 text-amber-400 px-2 py-0.5 rounded">Core</span>
+            </div>
+            <div class="font-bold text-[13px] text-white mb-1.5">O Meu Negocio</div>
+            <div class="text-[12px] text-white/50 leading-[1.55]">Configuracao da empresa, logotipo, NUIT, regime fiscal</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contabilidade Modules -->
+      <div class="mb-12">
+        <div class="reveal-on-scroll">
+          <div class="flex items-center gap-3 mb-5">
+            <span class="bg-blue-500 text-white text-[10px] font-bold tracking-[0.8px] uppercase px-2.5 py-1 rounded-full">Contabilidade</span>
+            <div class="h-px bg-white/[0.06] flex-1"></div>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
+          <div class="module-card reveal-on-scroll">
+            <div class="flex items-center gap-2.5 mb-3"><span class="text-[22px] text-sky-400"><i data-lucide="file-text" class="w-5 h-5"></i></span></div>
+            <div class="font-bold text-[13px] text-white mb-1.5">Plano de Contas (PGC)</div>
+            <div class="text-[12px] text-white/50 leading-[1.55]">Hierarquia de contas, importacao por template</div>
+          </div>
+          <div class="module-card reveal-on-scroll">
+            <div class="flex items-center gap-2.5 mb-3"><span class="text-[22px] text-sky-400"><i data-lucide="receipt" class="w-5 h-5"></i></span></div>
+            <div class="font-bold text-[13px] text-white mb-1.5">Diario & Razao</div>
+            <div class="text-[12px] text-white/50 leading-[1.55]">Lancamentos com selagem SHA-1 automatica</div>
+          </div>
+          <div class="module-card reveal-on-scroll">
+            <div class="flex items-center gap-2.5 mb-3"><span class="text-[22px] text-sky-400"><i data-lucide="file-text" class="w-5 h-5"></i></span></div>
+            <div class="font-bold text-[13px] text-white mb-1.5">Faturacao</div>
+            <div class="text-[12px] text-white/50 leading-[1.55]">Facturas, notas de credito, recibos provisorios</div>
+          </div>
+          <div class="module-card reveal-on-scroll">
+            <div class="flex items-center gap-2.5 mb-3"><span class="text-[22px] text-sky-400"><i data-lucide="file-text" class="w-5 h-5"></i></span></div>
+            <div class="font-bold text-[13px] text-white mb-1.5">Guia de Transporte</div>
+            <div class="text-[12px] text-white/50 leading-[1.55]">Emissao e rastreio de guias de remessa</div>
+          </div>
+          <div class="module-card reveal-on-scroll">
+            <div class="flex items-center gap-2.5 mb-3"><span class="text-[22px] text-sky-400"><i data-lucide="trending-up" class="w-5 h-5"></i></span></div>
+            <div class="font-bold text-[13px] text-white mb-1.5">Balancetes & Balancos</div>
+            <div class="text-[12px] text-white/50 leading-[1.55]">Geracao automatica de demonstracoes financeiras</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Vendas Modules -->
+      <div class="mb-12">
+        <div class="reveal-on-scroll">
+          <div class="flex items-center gap-3 mb-5">
+            <span class="bg-blue-500 text-white text-[10px] font-bold tracking-[0.8px] uppercase px-2.5 py-1 rounded-full">Vendas</span>
+            <div class="h-px bg-white/[0.06] flex-1"></div>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
+          <div class="module-card reveal-on-scroll">
+            <div class="flex items-center gap-2.5 mb-3"><span class="text-[22px] text-sky-400"><i data-lucide="users" class="w-5 h-5"></i></span></div>
+            <div class="font-bold text-[13px] text-white mb-1.5">Clientes & Fornecedores</div>
+            <div class="text-[12px] text-white/50 leading-[1.55]">CRF completo com historico e limites de credito</div>
+          </div>
+          <div class="module-card reveal-on-scroll">
+            <div class="flex items-center gap-2.5 mb-3"><span class="text-[22px] text-sky-400"><i data-lucide="shopping-cart" class="w-5 h-5"></i></span></div>
+            <div class="font-bold text-[13px] text-white mb-1.5">Encomendas & Orcamentos</div>
+            <div class="text-[12px] text-white/50 leading-[1.55]">Pipeline de vendas com conversao automatica</div>
+          </div>
+          <div class="module-card reveal-on-scroll">
+            <div class="flex items-center gap-2.5 mb-3"><span class="text-[22px] text-sky-400"><i data-lucide="bar-chart-3" class="w-5 h-5"></i></span></div>
+            <div class="font-bold text-[13px] text-white mb-1.5">Relatorios de Vendas</div>
+            <div class="text-[12px] text-white/50 leading-[1.55]">Analise por periodo, produto, cliente e vendedor</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stock & POS Modules -->
+      <div class="mb-12">
+        <div class="reveal-on-scroll">
+          <div class="flex items-center gap-3 mb-5">
+            <span class="bg-blue-500 text-white text-[10px] font-bold tracking-[0.8px] uppercase px-2.5 py-1 rounded-full">Stock & POS</span>
+            <div class="h-px bg-white/[0.06] flex-1"></div>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
+          <div class="module-card reveal-on-scroll">
+            <div class="flex items-center gap-2.5 mb-3"><span class="text-[22px] text-sky-400"><i data-lucide="package" class="w-5 h-5"></i></span></div>
+            <div class="font-bold text-[13px] text-white mb-1.5">Inventario & Stock</div>
+            <div class="text-[12px] text-white/50 leading-[1.55]">Gestao multi-armazem com alertas de minimo</div>
+          </div>
+          <div class="module-card reveal-on-scroll">
+            <div class="flex items-center gap-2.5 mb-3"><span class="text-[22px] text-sky-400"><i data-lucide="shopping-cart" class="w-5 h-5"></i></span></div>
+            <div class="font-bold text-[13px] text-white mb-1.5">POS Offline-First</div>
+            <div class="text-[12px] text-white/50 leading-[1.55]">Ponto de venda que funciona sem internet</div>
+          </div>
+          <div class="module-card reveal-on-scroll">
+            <div class="flex items-center gap-2.5 mb-3"><span class="text-[22px] text-sky-400"><i data-lucide="smartphone" class="w-5 h-5"></i></span></div>
+            <div class="font-bold text-[13px] text-white mb-1.5">M-Pesa Integrado</div>
+            <div class="text-[12px] text-white/50 leading-[1.55]">Pagamentos moveis com confirmacao automatica</div>
+          </div>
+          <div class="module-card reveal-on-scroll">
+            <div class="flex items-center gap-2.5 mb-3"><span class="text-[22px] text-sky-400"><i data-lucide="layers" class="w-5 h-5"></i></span></div>
+            <div class="font-bold text-[13px] text-white mb-1.5">Codigos de Barras</div>
+            <div class="text-[12px] text-white/50 leading-[1.55]">Impressao e leitura de codigos QR e barras</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RH Modules -->
+      <div class="mb-12">
+        <div class="reveal-on-scroll">
+          <div class="flex items-center gap-3 mb-5">
+            <span class="bg-blue-500 text-white text-[10px] font-bold tracking-[0.8px] uppercase px-2.5 py-1 rounded-full">Recursos Humanos</span>
+            <div class="h-px bg-white/[0.06] flex-1"></div>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
+          <div class="module-card reveal-on-scroll">
+            <div class="flex items-center gap-2.5 mb-3"><span class="text-[22px] text-sky-400"><i data-lucide="users" class="w-5 h-5"></i></span></div>
+            <div class="font-bold text-[13px] text-white mb-1.5">Folha de Salarios</div>
+            <div class="text-[12px] text-white/50 leading-[1.55]">Calculo automatico de IRPS, INSS e subsidios</div>
+          </div>
+          <div class="module-card reveal-on-scroll">
+            <div class="flex items-center gap-2.5 mb-3"><span class="text-[22px] text-sky-400"><i data-lucide="building-2" class="w-5 h-5"></i></span></div>
+            <div class="font-bold text-[13px] text-white mb-1.5">Departamentos</div>
+            <div class="text-[12px] text-white/50 leading-[1.55]">Estrutura organizacional e hierarquia</div>
+          </div>
+          <div class="module-card reveal-on-scroll">
+            <div class="flex items-center gap-2.5 mb-3"><span class="text-[22px] text-sky-400"><i data-lucide="file-text" class="w-5 h-5"></i></span></div>
+            <div class="font-bold text-[13px] text-white mb-1.5">Processos & Ferias</div>
+            <div class="text-[12px] text-white/50 leading-[1.55]">Gestao de assiduidade, ferias e faltas</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ONG Modules -->
+      <div class="mb-12">
+        <div class="reveal-on-scroll">
+          <div class="flex items-center gap-3 mb-5">
+            <span class="bg-blue-500 text-white text-[10px] font-bold tracking-[0.8px] uppercase px-2.5 py-1 rounded-full">ONG & Projetos</span>
+            <div class="h-px bg-white/[0.06] flex-1"></div>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
+          <div class="module-card reveal-on-scroll">
+            <div class="flex items-center gap-2.5 mb-3"><span class="text-[22px] text-sky-400"><i data-lucide="globe" class="w-5 h-5"></i></span></div>
+            <div class="font-bold text-[13px] text-white mb-1.5">Subvencoes & Doadores</div>
+            <div class="text-[12px] text-white/50 leading-[1.55]">Rastreio de fundos por doador e projeto</div>
+          </div>
+          <div class="module-card reveal-on-scroll">
+            <div class="flex items-center gap-2.5 mb-3"><span class="text-[22px] text-sky-400"><i data-lucide="hand-helping" class="w-5 h-5"></i></span></div>
+            <div class="font-bold text-[13px] text-white mb-1.5">Gestao de Projetos</div>
+            <div class="text-[12px] text-white/50 leading-[1.55]">Orcamentos, actividades e indicadores de impacto</div>
+          </div>
+          <div class="module-card reveal-on-scroll">
+            <div class="flex items-center gap-2.5 mb-3"><span class="text-[22px] text-sky-400"><i data-lucide="file-text" class="w-5 h-5"></i></span></div>
+            <div class="font-bold text-[13px] text-white mb-1.5">Relatorios para Doadores</div>
+            <div class="text-[12px] text-white/50 leading-[1.55]">Relatorios financeiros conforme donor requirements</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       FUNCIONALIDADES
+       ═══════════════════════════════════════════ -->
+  <section id="features" class="section-ice relative overflow-hidden py-24 px-[5%]">
+    <div class="absolute inset-0" style="background: radial-gradient(ellipse at 60% 40%, rgba(37,99,235,0.04) 0%, transparent 55%)"></div>
+    <div class="relative z-10 text-center max-w-[640px] mx-auto mb-14 reveal-on-scroll">
+      <h2 class="text-[clamp(1.9rem,3.8vw,2.9rem)] font-extrabold text-white mb-4 tracking-[-0.5px]">
+        Tecnologia de <span class="bg-gradient-to-r from-slate-800 via-blue-600 to-amber-500 bg-clip-text text-transparent">Ultima Geracao</span>
+      </h2>
+      <p class="text-[16px] text-white/45 max-w-[580px] mx-auto leading-[1.75]">
+        Funcionalidades avancadas que tornam o ContaFacil o ERP mais completo e seguro de Mocambique.
+      </p>
+    </div>
+    <div class="relative z-10 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 max-w-[1200px] mx-auto">
+      <!-- Feature 1 -->
+      <div class="feature-card reveal-on-scroll">
+        <div class="relative z-10">
+          <div class="text-[11px] font-bold text-amber-500 tracking-[1px] mb-3">01</div>
+          <div class="w-12 h-12 rounded-xl bg-white/[0.06] border border-white/[0.08] flex items-center justify-center text-[20px] text-sky-400 mb-4">
+            <i data-lucide="lock" class="w-5 h-5"></i>
+          </div>
+          <div class="font-bold text-[15.5px] text-white mb-2">Selagem Digital SHA-1</div>
+          <div class="text-[13px] text-white/45 leading-[1.65]">Cada documento fiscal e selado com hash criptografico, garantindo autenticidade e conformidade com a Autoridade Tributaria de Mocambique.</div>
+        </div>
+      </div>
+      <!-- Feature 2 -->
+      <div class="feature-card reveal-on-scroll">
+        <div class="relative z-10">
+          <div class="text-[11px] font-bold text-amber-500 tracking-[1px] mb-3">02</div>
+          <div class="w-12 h-12 rounded-xl bg-white/[0.06] border border-white/[0.08] flex items-center justify-center text-[20px] text-sky-400 mb-4">
+            <i data-lucide="file-text" class="w-5 h-5"></i>
+          </div>
+          <div class="font-bold text-[15.5px] text-white mb-2">SAF-T MZ Automatico</div>
+          <div class="text-[13px] text-white/45 leading-[1.65]">Geracao automatica do ficheiro SAF-T no formato exigido pela AT. Sem exportacoes manuais, sem erros de mapeamento.</div>
+        </div>
+      </div>
+      <!-- Feature 3 -->
+      <div class="feature-card reveal-on-scroll">
+        <div class="relative z-10">
+          <div class="text-[11px] font-bold text-amber-500 tracking-[1px] mb-3">03</div>
+          <div class="w-12 h-12 rounded-xl bg-white/[0.06] border border-white/[0.08] flex items-center justify-center text-[20px] text-sky-400 mb-4">
+            <i data-lucide="cpu" class="w-5 h-5"></i>
+          </div>
+          <div class="font-bold text-[15.5px] text-white mb-2">Offline-First Architecture</div>
+          <div class="text-[13px] text-white/45 leading-[1.65]">O sistema funciona mesmo sem conexao a internet. Os dados sincronizam automaticamente quando a conexao e restaurada.</div>
+        </div>
+      </div>
+      <!-- Feature 4 -->
+      <div class="feature-card reveal-on-scroll">
+        <div class="relative z-10">
+          <div class="text-[11px] font-bold text-amber-500 tracking-[1px] mb-3">04</div>
+          <div class="w-12 h-12 rounded-xl bg-white/[0.06] border border-white/[0.08] flex items-center justify-center text-[20px] text-sky-400 mb-4">
+            <i data-lucide="database" class="w-5 h-5"></i>
+          </div>
+          <div class="font-bold text-[15.5px] text-white mb-2">Multi-Regime Fiscal</div>
+          <div class="text-[13px] text-white/45 leading-[1.65]">Suporte completo a Simplificado, Contabilidade Organizada e Regime Geral. Mude de regime sem perder dados historicos.</div>
+        </div>
+      </div>
+      <!-- Feature 5 -->
+      <div class="feature-card reveal-on-scroll">
+        <div class="relative z-10">
+          <div class="text-[11px] font-bold text-amber-500 tracking-[1px] mb-3">05</div>
+          <div class="w-12 h-12 rounded-xl bg-white/[0.06] border border-white/[0.08] flex items-center justify-center text-[20px] text-sky-400 mb-4">
+            <i data-lucide="shield" class="w-5 h-5"></i>
+          </div>
+          <div class="font-bold text-[15.5px] text-white mb-2">Backup Automatico</div>
+          <div class="text-[13px] text-white/45 leading-[1.65]">Copias de seguranca diarias encriptadas e armazenadas na nuvem. Restauracao completa em caso de emergencia.</div>
+        </div>
+      </div>
+      <!-- Feature 6 -->
+      <div class="feature-card reveal-on-scroll">
+        <div class="relative z-10">
+          <div class="text-[11px] font-bold text-amber-500 tracking-[1px] mb-3">06</div>
+          <div class="w-12 h-12 rounded-xl bg-white/[0.06] border border-white/[0.08] flex items-center justify-center text-[20px] text-sky-400 mb-4">
+            <i data-lucide="zap" class="w-5 h-5"></i>
+          </div>
+          <div class="font-bold text-[15.5px] text-white mb-2">Inteligencia Fiscal</div>
+          <div class="text-[13px] text-white/45 leading-[1.65]">Alertas automaticos de obrigacoes fiscais, calculos de IRPS/IRPC e apresentacao periodica de declaracoes.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       DASHBOARD AO VIVO
+       ═══════════════════════════════════════════ -->
+  <section id="dashboard-ao-vivo" class="section-ice relative overflow-hidden py-24 px-[5%]">
+    <div class="absolute inset-0 pointer-events-none" style="background: radial-gradient(ellipse at 70% 50%, rgba(37,99,235,0.05) 0%, transparent 50%)"></div>
+    <div class="relative z-10 max-w-[1200px] mx-auto">
+      <div class="text-center max-w-[640px] mx-auto mb-14 reveal-on-scroll">
+        <div class="inline-flex items-center gap-2 bg-white/[0.04] border border-white/[0.08] text-slate-300 text-[11.5px] font-bold tracking-[0.9px] uppercase px-3.5 py-1.5 rounded-full mb-5">
+          <i data-lucide="monitor" class="w-4 h-4"></i>
+          Dashboard ao Vivo
+        </div>
+        <h2 class="text-[clamp(1.9rem,3.8vw,2.9rem)] font-extrabold text-white mb-4 tracking-[-0.5px]">
+          Veja o seu negocio <span class="bg-gradient-to-r from-blue-300 via-sky-200 to-white bg-clip-text text-transparent">em tempo real</span>
+        </h2>
+        <p class="text-[16px] text-white/50 max-w-[580px] mx-auto leading-[1.75]">
+          Dashboards intuitivos com KPIs, graficos interativos e alertas automaticos. Um painel para empresas, outro para ONGs.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 xl:grid-cols-2 gap-7">
+        <!-- Dashboard 1 -->
+        <div class="screenshot-card reveal-on-scroll" onclick="openModal('/pos-dashboard-real.png', 'Dashboard Financeiro')">
+          <div class="relative overflow-hidden bg-[#060d1b]">
+            <img src="/pos-dashboard-real.png" alt="Dashboard Financeiro" class="w-full h-auto transition-transform duration-500 hover:scale-[1.02]" loading="lazy">
+            <div class="screenshot-top-bar">
+              <div class="screenshot-dots"><span class="screenshot-dot-red"></span><span class="screenshot-dot-amber"></span><span class="screenshot-dot-blue"></span></div>
+              <span class="screenshot-label">ContaFacil ERP — Dashboard Principal</span>
+              <i data-lucide="maximize-2" class="w-3.5 h-3.5 text-white/30"></i>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="font-bold text-[17px] text-white mb-2">Dashboard Financeiro</h3>
+            <p class="text-[13px] text-white/50 leading-[1.65]">Visao completa da saude financeira da sua empresa. Receita, despesas, facturacao pendente e indicadores de desempenho — tudo atualizado em tempo real.</p>
+          </div>
+        </div>
+        <!-- Dashboard 2 -->
+        <div class="screenshot-card reveal-on-scroll" onclick="openModal('/ong-dashboard-real.png', 'Dashboard ONG')">
+          <div class="relative overflow-hidden bg-[#060d1b]">
+            <img src="/ong-dashboard-real.png" alt="Dashboard ONG" class="w-full h-auto transition-transform duration-500 hover:scale-[1.02]" loading="lazy">
+            <div class="screenshot-top-bar">
+              <div class="screenshot-dots"><span class="screenshot-dot-red"></span><span class="screenshot-dot-amber"></span><span class="screenshot-dot-blue"></span></div>
+              <span class="screenshot-label">ContaFacil ERP — Dashboard ONG</span>
+              <i data-lucide="maximize-2" class="w-3.5 h-3.5 text-white/30"></i>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="font-bold text-[17px] text-white mb-2">Dashboard ONG</h3>
+            <p class="text-[13px] text-white/50 leading-[1.65]">Controle total sobre subvencoes, projectos activos e fundos por doador. Saiba exactamente quanto recebeu, gastou e o saldo disponivel por programa.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-8 text-center reveal-on-scroll">
+        <p class="text-[13px] text-white/30 italic">Clique na imagem para ampliar e explorar o dashboard completo.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       MODELOS DE RELATORIOS
+       ═══════════════════════════════════════════ -->
+  <section id="relatorios" class="section-ice py-24 px-[5%]">
+    <div class="max-w-[1200px] mx-auto">
+      <div class="text-center max-w-[640px] mx-auto mb-14 reveal-on-scroll">
+        <div class="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/20 text-amber-400 text-[11.5px] font-bold tracking-[0.9px] uppercase px-3.5 py-1.5 rounded-full mb-5">
+          <i data-lucide="printer" class="w-4 h-4"></i>
+          Modelos de Relatorios
+        </div>
+        <h2 class="text-[clamp(1.9rem,3.8vw,2.9rem)] font-extrabold text-white mb-4 tracking-[-0.5px]">
+          Relatorios profissionais <span class="bg-gradient-to-r from-slate-800 via-blue-600 to-amber-500 bg-clip-text text-transparent">com um clique</span>
+        </h2>
+        <p class="text-[16px] text-white/50 max-w-[580px] mx-auto leading-[1.75]">
+          Do Balanco ao relatorio para doadores — todos os modelos que precisa, prontos a imprimir ou exportar em PDF e Excel.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[1200px] mx-auto">
+        <!-- Report 1: Factura -->
+        <div class="report-card reveal-on-scroll" onclick="openModal('/factura.jpg', 'Factura')">
+          <div class="relative overflow-hidden bg-slate-50 border-b border-slate-100">
+            <img src="/factura.jpg" alt="Factura" class="w-full h-auto object-contain transition-transform duration-500 hover:scale-[1.03]" loading="lazy">
+            <div class="report-top-bar">
+              <div class="report-dots"><span class="report-dot-red"></span><span class="report-dot-amber"></span><span class="report-dot-green"></span></div>
+              <span class="report-label">ContaFacil ERP — Factura</span>
+              <i data-lucide="maximize-2" class="w-3.5 h-3.5 text-slate-400"></i>
+            </div>
+            <div class="report-hover-overlay"><span class="report-hover-text">Clique para ampliar</span></div>
+          </div>
+          <div class="p-5 bg-white">
+            <div class="flex items-center gap-2.5 mb-2">
+              <i data-lucide="receipt" class="w-4 h-4 text-blue-600"></i>
+              <h3 class="font-bold text-[16px] text-slate-800">Factura</h3>
+            </div>
+            <p class="text-[13px] text-slate-500 leading-[1.65]">Facturas profissionais com numeracao sequencial, dados da empresa, IVA automatico, totais detalhados e layout pronto para impressao ou envio por email ao cliente.</p>
+            <div class="mt-3 flex items-center gap-2 text-[11px] font-semibold text-blue-600 uppercase tracking-wider">
+              <i data-lucide="printer" class="w-3 h-3"></i>
+              Exportavel em PDF e Excel
+            </div>
+          </div>
+        </div>
+
+        <!-- Report 2: Vendas POS -->
+        <div class="report-card reveal-on-scroll" onclick="openModal('/relatorio-vendas-pos.jpg', 'Relatorio de Vendas POS')">
+          <div class="relative overflow-hidden bg-slate-50 border-b border-slate-100">
+            <img src="/relatorio-vendas-pos.jpg" alt="Relatorio de Vendas POS" class="w-full h-auto object-contain transition-transform duration-500 hover:scale-[1.03]" loading="lazy">
+            <div class="report-top-bar">
+              <div class="report-dots"><span class="report-dot-red"></span><span class="report-dot-amber"></span><span class="report-dot-green"></span></div>
+              <span class="report-label">ContaFacil ERP — Relatorio de Vendas POS</span>
+              <i data-lucide="maximize-2" class="w-3.5 h-3.5 text-slate-400"></i>
+            </div>
+            <div class="report-hover-overlay"><span class="report-hover-text">Clique para ampliar</span></div>
+          </div>
+          <div class="p-5 bg-white">
+            <div class="flex items-center gap-2.5 mb-2">
+              <i data-lucide="bar-chart-3" class="w-4 h-4 text-blue-600"></i>
+              <h3 class="font-bold text-[16px] text-slate-800">Relatorio de Vendas POS</h3>
+            </div>
+            <p class="text-[13px] text-slate-500 leading-[1.65]">Relatorio completo de vendas do ponto de venda com detalhamento por produto, forma de pagamento, periodo e totais consolidados para analise de desempenho.</p>
+            <div class="mt-3 flex items-center gap-2 text-[11px] font-semibold text-blue-600 uppercase tracking-wider">
+              <i data-lucide="printer" class="w-3 h-3"></i>
+              Exportavel em PDF e Excel
+            </div>
+          </div>
+        </div>
+
+        <!-- Report 3: Balancete -->
+        <div class="report-card reveal-on-scroll" onclick="openModal('/balancete-verificacao.jpg', 'Balancete de Verificacao')">
+          <div class="relative overflow-hidden bg-slate-50 border-b border-slate-100">
+            <img src="/balancete-verificacao.jpg" alt="Balancete de Verificacao" class="w-full h-auto object-contain transition-transform duration-500 hover:scale-[1.03]" loading="lazy">
+            <div class="report-top-bar">
+              <div class="report-dots"><span class="report-dot-red"></span><span class="report-dot-amber"></span><span class="report-dot-green"></span></div>
+              <span class="report-label">ContaFacil ERP — Balancete de Verificacao</span>
+              <i data-lucide="maximize-2" class="w-3.5 h-3.5 text-slate-400"></i>
+            </div>
+            <div class="report-hover-overlay"><span class="report-hover-text">Clique para ampliar</span></div>
+          </div>
+          <div class="p-5 bg-white">
+            <div class="flex items-center gap-2.5 mb-2">
+              <i data-lucide="file-text" class="w-4 h-4 text-blue-600"></i>
+              <h3 class="font-bold text-[16px] text-slate-800">Balancete de Verificacao</h3>
+            </div>
+            <p class="text-[13px] text-slate-500 leading-[1.65]">Balancete de verificacao gerado automaticamente conforme o PGC-Mocambique, com saldos por conta e validacao contabilistica para auditoria e prestacao de contas.</p>
+            <div class="mt-3 flex items-center gap-2 text-[11px] font-semibold text-blue-600 uppercase tracking-wider">
+              <i data-lucide="printer" class="w-3 h-3"></i>
+              Exportavel em PDF e Excel
+            </div>
+          </div>
+        </div>
+
+        <!-- Report 4: Demonstracao de Resultados -->
+        <div class="report-card reveal-on-scroll" onclick="openModal('/demonstracao-resultados.jpg', 'Demonstracao de Resultados')">
+          <div class="relative overflow-hidden bg-slate-50 border-b border-slate-100">
+            <img src="/demonstracao-resultados.jpg" alt="Demonstracao de Resultados" class="w-full h-auto object-contain transition-transform duration-500 hover:scale-[1.03]" loading="lazy">
+            <div class="report-top-bar">
+              <div class="report-dots"><span class="report-dot-red"></span><span class="report-dot-amber"></span><span class="report-dot-green"></span></div>
+              <span class="report-label">ContaFacil ERP — Demonstracao de Resultados</span>
+              <i data-lucide="maximize-2" class="w-3.5 h-3.5 text-slate-400"></i>
+            </div>
+            <div class="report-hover-overlay"><span class="report-hover-text">Clique para ampliar</span></div>
+          </div>
+          <div class="p-5 bg-white">
+            <div class="flex items-center gap-2.5 mb-2">
+              <i data-lucide="trending-up" class="w-4 h-4 text-blue-600"></i>
+              <h3 class="font-bold text-[16px] text-slate-800">Demonstracao de Resultados</h3>
+            </div>
+            <p class="text-[13px] text-slate-500 leading-[1.65]">Demonstracao de resultados (DRE) com receitas, despesas por rubrica e resultado liquido — essencial para ONGs e empresas na prestacao de contas a doadores e a AT.</p>
+            <div class="mt-3 flex items-center gap-2 text-[11px] font-semibold text-blue-600 uppercase tracking-wider">
+              <i data-lucide="printer" class="w-3 h-3"></i>
+              Exportavel em PDF e Excel
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-10 text-center reveal-on-scroll">
+        <div class="inline-flex items-center gap-3 bg-blue-50 border border-blue-100 text-blue-700 text-[13px] font-medium px-5 py-2.5 rounded-full">
+          <i data-lucide="check-circle-2" class="w-4 h-4"></i>
+          Todos os relatorios sao gerados automaticamente a partir dos dados reais do seu ERP
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       POS - PONTO DE VENDA
+       ═══════════════════════════════════════════ -->
+  <section id="pos" class="section-ice relative overflow-hidden py-24 px-[5%]">
+    <div class="absolute inset-0 pointer-events-none" style="background: radial-gradient(ellipse at 30% 60%, rgba(37,99,235,0.04) 0%, transparent 50%)"></div>
+    <div class="relative z-10 max-w-[1200px] mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <!-- POS Screenshot -->
+        <div class="order-2 lg:order-1 reveal-on-scroll">
+          <div class="screenshot-card" onclick="openModal('/erp-dashboard-real.png', 'Ponto de Venda Offline-First')">
+            <div class="relative overflow-hidden bg-[#060d1b]">
+              <img src="/erp-dashboard-real.png" alt="Ponto de Venda" class="w-full h-auto transition-transform duration-500 hover:scale-[1.02]" loading="lazy">
+              <div class="screenshot-top-bar">
+                <div class="screenshot-dots"><span class="screenshot-dot-red"></span><span class="screenshot-dot-amber"></span><span class="screenshot-dot-blue"></span></div>
+                <span class="screenshot-label">ContaFacil ERP — POS</span>
+                <i data-lucide="maximize-2" class="w-3.5 h-3.5 text-white/30"></i>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="font-bold text-[17px] text-white mb-2">Ponto de Venda Offline-First</h3>
+            </div>
+          </div>
+        </div>
+
+        <!-- POS Info -->
+        <div class="order-1 lg:order-2 reveal-on-scroll">
+          <div class="inline-flex items-center gap-2 bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-[11.5px] font-bold tracking-[0.9px] uppercase px-3.5 py-1.5 rounded-full mb-5">
+            <i data-lucide="shopping-cart" class="w-4 h-4"></i>
+            Ponto de Venda
+          </div>
+          <h2 class="text-[clamp(1.9rem,3.8vw,2.9rem)] font-extrabold text-white mb-4 tracking-[-0.5px]">
+            POS que <span class="bg-gradient-to-r from-blue-300 via-sky-200 to-white bg-clip-text text-transparent">nunca para</span>
+          </h2>
+          <p class="text-[16px] text-white/50 max-w-[580px] leading-[1.75] mb-8">
+            Venda mesmo sem internet. O POS funciona offline, sincroniza automaticamente quando a rede volta, e aceita pagamentos M-Pesa, TPA e dinheiro.
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+            <div class="flex items-center gap-2.5 bg-white/[0.03] border border-white/[0.06] rounded-xl px-4 py-3">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-amber-400 flex-shrink-0"></i>
+              <span class="text-[13px] text-white/65">Funciona 100% sem internet</span>
+            </div>
+            <div class="flex items-center gap-2.5 bg-white/[0.03] border border-white/[0.06] rounded-xl px-4 py-3">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-amber-400 flex-shrink-0"></i>
+              <span class="text-[13px] text-white/65">Pagamentos M-Pesa integrados</span>
+            </div>
+            <div class="flex items-center gap-2.5 bg-white/[0.03] border border-white/[0.06] rounded-xl px-4 py-3">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-amber-400 flex-shrink-0"></i>
+              <span class="text-[13px] text-white/65">Leitura de codigos de barras</span>
+            </div>
+            <div class="flex items-center gap-2.5 bg-white/[0.03] border border-white/[0.06] rounded-xl px-4 py-3">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-amber-400 flex-shrink-0"></i>
+              <span class="text-[13px] text-white/65">Sincronizacao automatica</span>
+            </div>
+            <div class="flex items-center gap-2.5 bg-white/[0.03] border border-white/[0.06] rounded-xl px-4 py-3">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-amber-400 flex-shrink-0"></i>
+              <span class="text-[13px] text-white/65">Fecho de caixa diario</span>
+            </div>
+            <div class="flex items-center gap-2.5 bg-white/[0.03] border border-white/[0.06] rounded-xl px-4 py-3">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-amber-400 flex-shrink-0"></i>
+              <span class="text-[13px] text-white/65">Multi-terminal</span>
+            </div>
+          </div>
+          <a href="https://wa.me/258849371782?text=Ola!%20Quero%20testar%20o%20POS%20do%20ContaFacil%20ERP" target="_blank" class="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500 to-amber-400 text-gray-900 no-underline px-6 py-3.5 rounded-xl text-[14.5px] font-semibold transition-all duration-300 shadow-lg shadow-amber-500/30 hover:from-amber-400 hover:to-amber-300 hover:-translate-y-0.5">
+            <i data-lucide="credit-card" class="w-4 h-4"></i>
+            Testar POS
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       PLANOS & PRECOS
+       ═══════════════════════════════════════════ -->
+  <section id="planos" class="section-ice py-24 px-[5%]">
+    <div class="text-center max-w-[620px] mx-auto mb-14 reveal-on-scroll">
+      <div class="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/20 text-amber-400 text-[11.5px] font-bold tracking-[0.9px] uppercase px-3.5 py-1.5 rounded-full mb-5">
+        <i data-lucide="wallet" class="w-4 h-4"></i>
+        Precos Transparentes
+      </div>
+      <h2 class="text-[clamp(1.9rem,3.8vw,2.9rem)] font-extrabold text-white mb-4 tracking-[-0.5px]">
+        Planos para <span class="bg-gradient-to-r from-slate-800 via-blue-600 to-amber-500 bg-clip-text text-transparent">cada etapa</span>
+      </h2>
+      <p class="text-[16px] text-white/50 max-w-[580px] mx-auto leading-[1.75]">
+        Comece gratis e escale conforme cresce. Todos os planos incluem selagem digital e suporte.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5 max-w-[1200px] mx-auto mb-9 items-start">
+
+      <!-- ═══ PLANO ESSENCIAL (Grátis) ═══ -->
+      <div class="plan-card reveal-on-scroll">
+        <div class="flex items-center justify-between mb-4">
+          <span class="text-[9.5px] font-bold tracking-[1px] uppercase px-2.5 py-1 rounded-full inline-block bg-emerald-500/15 text-emerald-300">Gratis para sempre</span>
+          <span class="text-[20px]">&#x1F195;</span>
+        </div>
+        <div class="text-amber-400 mb-2"><i data-lucide="zap" class="w-8 h-8"></i></div>
+        <div class="font-extrabold text-[21px] text-white mb-1">Essencial</div>
+        <div class="flex items-baseline gap-1 mb-1">
+          <span class="font-extrabold text-[28px] text-emerald-400">Gratis</span>
+        </div>
+        <div class="text-[12px] leading-[1.55] my-3 pb-4 border-b border-white/[0.06] text-white/50">Para comecar sem custos. Ideal para explorar o sistema ou para operacoes muito basicas.</div>
+        <div class="mb-4">
+          <div class="text-[10px] font-bold tracking-[0.8px] uppercase text-white/30 mb-2">Limites</div>
+          <ul class="list-none flex flex-col gap-1.5">
+            <li class="flex items-center gap-2 text-[11.5px] text-white/45"><i data-lucide="gauge" class="w-3 h-3 text-white/25 flex-shrink-0"></i>1 usuario</li>
+            <li class="flex items-center gap-2 text-[11.5px] text-white/45"><i data-lucide="gauge" class="w-3 h-3 text-white/25 flex-shrink-0"></i>0 projetos ONG</li>
+            <li class="flex items-center gap-2 text-[11.5px] text-white/45"><i data-lucide="gauge" class="w-3 h-3 text-white/25 flex-shrink-0"></i>Sem RH</li>
+            <li class="flex items-center gap-2 text-[11.5px] text-white/45"><i data-lucide="gauge" class="w-3 h-3 text-white/25 flex-shrink-0"></i>50 lancamentos/mes</li>
+            <li class="flex items-center gap-2 text-[11.5px] text-white/45"><i data-lucide="gauge" class="w-3 h-3 text-white/25 flex-shrink-0"></i>Sem backup</li>
+          </ul>
+        </div>
+        <div class="mb-4">
+          <div class="text-[10px] font-bold tracking-[0.8px] uppercase text-white/30 mb-2">Inclui</div>
+          <ul class="list-none flex flex-col gap-1.5">
+            <li class="flex items-start gap-2 text-[12px]"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 mt-0.5 flex-shrink-0 text-sky-500"></i><span class="text-white/60">Dashboard & KPIs</span></li>
+            <li class="flex items-start gap-2 text-[12px]"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 mt-0.5 flex-shrink-0 text-sky-500"></i><span class="text-white/60">Resumo Financeiro</span></li>
+            <li class="flex items-start gap-2 text-[12px]"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 mt-0.5 flex-shrink-0 text-sky-500"></i><span class="text-white/60">Diario Contabilistico</span></li>
+            <li class="flex items-start gap-2 text-[12px]"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 mt-0.5 flex-shrink-0 text-sky-500"></i><span class="text-white/60">Plano de Contas (PGC)</span></li>
+            <li class="flex items-start gap-2 text-[12px]"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 mt-0.5 flex-shrink-0 text-sky-500"></i><span class="text-white/60">Relatorios Financeiros</span></li>
+            <li class="flex items-start gap-2 text-[12px]"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 mt-0.5 flex-shrink-0 text-sky-500"></i><span class="text-white/60">Caixa & Bancos</span></li>
+            <li class="flex items-start gap-2 text-[12px]"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 mt-0.5 flex-shrink-0 text-sky-500"></i><span class="text-white/60">Pagamentos & Recebimentos</span></li>
+            <li class="flex items-start gap-2 text-[12px]"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 mt-0.5 flex-shrink-0 text-sky-500"></i><span class="text-white/60">Clientes & Fornecedores</span></li>
+            <li class="flex items-start gap-2 text-[12px]"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 mt-0.5 flex-shrink-0 text-sky-500"></i><span class="text-white/60">Catalogo de Produtos</span></li>
+          </ul>
+        </div>
+        <div class="mb-6">
+          <div class="text-[10px] font-bold tracking-[0.8px] uppercase text-red-400/50 mb-2">Nao inclui</div>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="text-[10.5px] bg-red-500/8 text-red-400/60 px-2 py-0.5 rounded-md border border-red-500/10 line-through">RH</span>
+            <span class="text-[10.5px] bg-red-500/8 text-red-400/60 px-2 py-0.5 rounded-md border border-red-500/10 line-through">ONG</span>
+            <span class="text-[10.5px] bg-red-500/8 text-red-400/60 px-2 py-0.5 rounded-md border border-red-500/10 line-through">Cambio</span>
+            <span class="text-[10.5px] bg-red-500/8 text-red-400/60 px-2 py-0.5 rounded-md border border-red-500/10 line-through">Inventario</span>
+            <span class="text-[10.5px] bg-red-500/8 text-red-400/60 px-2 py-0.5 rounded-md border border-red-500/10 line-through">Reconciliacao</span>
+            <span class="text-[10.5px] bg-red-500/8 text-red-400/60 px-2 py-0.5 rounded-md border border-red-500/10 line-through">Impostos</span>
+            <span class="text-[10.5px] bg-red-500/8 text-red-400/60 px-2 py-0.5 rounded-md border border-red-500/10 line-through">POS</span>
+          </div>
+        </div>
+        <a href="https://ademofinanca.vercel.app/?registo=1&plano=free" target="_blank" class="plan-btn plan-btn-emerald w-full flex items-center justify-center gap-2">
+          Comecar Gratis <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+      </div>
+
+      <!-- ═══ PLANO ASSOCIACAO ═══ -->
+      <div class="plan-card reveal-on-scroll">
+        <div class="flex items-center justify-between mb-4">
+          <span class="text-[9.5px] font-bold tracking-[1px] uppercase px-2.5 py-1 rounded-full inline-block bg-sky-500/15 text-sky-300">ONG Badge</span>
+          <span class="text-[20px]">&#127758;</span>
+        </div>
+        <div class="text-amber-400 mb-2"><i data-lucide="hand-helping" class="w-8 h-8"></i></div>
+        <div class="font-extrabold text-[21px] text-white mb-1">Associacao</div>
+        <div class="flex items-baseline gap-1 mb-1">
+          <span class="text-[14px] font-semibold text-white/60 mt-1 inline-block" data-monthly-label>MT</span>
+          <span class="font-extrabold text-[33px] text-white leading-none plan-price-display" data-monthly="590" data-annual="5.900">590</span>
+          <span class="text-[13px] text-white/40 plan-period-display">/mes</span>
+        </div>
+        <div class="flex items-center gap-2 mb-3 plan-annual-toggle-row">
+          <span class="text-[11px] font-medium text-white/70 plan-monthly-label">Mensal</span>
+          <button class="plan-annual-toggle relative w-9 h-5 rounded-full transition-all duration-300 flex-shrink-0 cursor-pointer border-none bg-white/10" onclick="togglePlanPeriod(this)">
+            <div class="absolute top-[3px] w-3.5 h-3.5 rounded-full transition-all duration-300 left-[3px] bg-white/40 plan-toggle-dot"></div>
+          </button>
+          <span class="text-[11px] font-medium text-white/30 plan-annual-label">Anual</span>
+        </div>
+        <div class="text-[12px] leading-[1.55] my-3 pb-4 border-b border-white/[0.06] text-white/50">Para ONGs e associacoes pequenas com 1 doador ativo.</div>
+        <div class="mb-4">
+          <div class="text-[10px] font-bold tracking-[0.8px] uppercase text-white/30 mb-2">Limites</div>
+          <ul class="list-none flex flex-col gap-1.5">
+            <li class="flex items-center gap-2 text-[11.5px] text-white/45"><i data-lucide="gauge" class="w-3 h-3 text-white/25 flex-shrink-0"></i>2 usuarios</li>
+            <li class="flex items-center gap-2 text-[11.5px] text-white/45"><i data-lucide="gauge" class="w-3 h-3 text-white/25 flex-shrink-0"></i>1 projeto ONG</li>
+            <li class="flex items-center gap-2 text-[11.5px] text-white/45"><i data-lucide="gauge" class="w-3 h-3 text-white/25 flex-shrink-0"></i>8 colaboradores RH</li>
+            <li class="flex items-center gap-2 text-[11.5px] text-white/45"><i data-lucide="gauge" class="w-3 h-3 text-white/25 flex-shrink-0"></i>1 moeda (ex: USD)</li>
+            <li class="flex items-center gap-2 text-[11.5px] text-white/45"><i data-lucide="gauge" class="w-3 h-3 text-white/25 flex-shrink-0"></i>200 lancamentos/mes</li>
+            <li class="flex items-center gap-2 text-[11.5px] text-white/45"><i data-lucide="gauge" class="w-3 h-3 text-white/25 flex-shrink-0"></i>Backup manual CSV</li>
+          </ul>
+        </div>
+        <div class="mb-4">
+          <div class="text-[10px] font-bold tracking-[0.8px] uppercase text-white/30 mb-2">Inclui</div>
+          <ul class="list-none flex flex-col gap-1.5">
+            <li class="flex items-start gap-2 text-[12px]"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 mt-0.5 flex-shrink-0 text-sky-500"></i><span class="text-white/60">Tudo do Essencial</span></li>
+            <li class="flex items-start gap-2 text-[12px]"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 mt-0.5 flex-shrink-0 text-sky-500"></i><span class="text-white/60">Cheques & Faturas Pro-Forma</span></li>
+            <li class="flex items-start gap-2 text-[12px]"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 mt-0.5 flex-shrink-0 text-sky-500"></i><span class="text-white/60">Notas de Credito</span></li>
+            <li class="flex items-start gap-2 text-[12px]"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 mt-0.5 flex-shrink-0 text-sky-500"></i><span class="text-white/60">Guias de Remessa</span></li>
+            <li class="flex items-start gap-2 text-[12px]"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 mt-0.5 flex-shrink-0 text-sky-500"></i><span class="text-white/60">RH completo</span></li>
+            <li class="flex items-start gap-2 text-[12px]"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 mt-0.5 flex-shrink-0 text-sky-500"></i><span class="text-white/60">Reembolsos & Centros de Custo</span></li>
+            <li class="flex items-start gap-2 text-[12px]"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 mt-0.5 flex-shrink-0 text-sky-500"></i><span class="text-white/60">Projetos & Subvencoes ONG</span></li>
+            <li class="flex items-start gap-2 text-[12px]"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 mt-0.5 flex-shrink-0 text-sky-500"></i><span class="text-white/60">Orcamento por Projeto</span></li>
+            <li class="flex items-start gap-2 text-[12px]"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 mt-0.5 flex-shrink-0 text-sky-500"></i><span class="text-white/60">Gestao de Utilizadores</span></li>
+            <li class="flex items-start gap-2 text-[12px]"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 mt-0.5 flex-shrink-0 text-sky-500"></i><span class="text-white/60">Taxas de Cambio</span></li>
+          </ul>
+        </div>
+        <div class="mb-6">
+          <div class="text-[10px] font-bold tracking-[0.8px] uppercase text-red-400/50 mb-2">Nao inclui</div>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="text-[10.5px] bg-red-500/8 text-red-400/60 px-2 py-0.5 rounded-md border border-red-500/10 line-through">Reconciliacao bancaria</span>
+            <span class="text-[10.5px] bg-red-500/8 text-red-400/60 px-2 py-0.5 rounded-md border border-red-500/10 line-through">Inventario</span>
+            <span class="text-[10.5px] bg-red-500/8 text-red-400/60 px-2 py-0.5 rounded-md border border-red-500/10 line-through">POS</span>
+            <span class="text-[10.5px] bg-red-500/8 text-red-400/60 px-2 py-0.5 rounded-md border border-red-500/10 line-through">Impostos fiscais</span>
+            <span class="text-[10.5px] bg-red-500/8 text-red-400/60 px-2 py-0.5 rounded-md border border-red-500/10 line-through">Formacao</span>
+          </div>
+        </div>
+        <a href="https://ademofinanca.vercel.app/?registo=1&plano=starter" target="_blank" class="plan-btn plan-btn-sky w-full flex items-center justify-center gap-2">
+          Solicitar Demo <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+      </div>
+
+      <!-- ═══ PLANO CRESCIMENTO (POPULAR) ═══ -->
+      <div class="plan-card plan-card-recommended reveal-on-scroll">
+        <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-500 to-amber-300"></div>
+        <div class="flex items-center justify-between mb-4">
+          <span class="text-[9.5px] font-bold tracking-[1px] uppercase px-2.5 py-1 rounded-full inline-block bg-amber-500/15 text-amber-300">MAIS POPULAR</span>
+          <span class="text-[20px]">&#11088;</span>
+        </div>
+        <div class="text-amber-400 mb-2"><i data-lucide="trending-up" class="w-8 h-8"></i></div>
+        <div class="font-extrabold text-[21px] text-white mb-1">Crescimento</div>
+        <div class="flex items-baseline gap-1 mb-1">
+          <span class="text-[14px] font-semibold text-white/60 mt-1 inline-block" data-monthly-label>MT</span>
+          <span class="font-extrabold text-[33px] text-white leading-none plan-price-display" data-monthly="1.190" data-annual="11.900">1.190</span>
+          <span class="text-[13px] text-white/40 plan-period-display">/mes</span>
+        </div>
+        <div class="flex items-center gap-2 mb-3 plan-annual-toggle-row">
+          <span class="text-[11px] font-medium text-white/70 plan-monthly-label">Mensal</span>
+          <button class="plan-annual-toggle relative w-9 h-5 rounded-full transition-all duration-300 flex-shrink-0 cursor-pointer border-none bg-white/10" onclick="togglePlanPeriod(this)">
+            <div class="absolute top-[3px] w-3.5 h-3.5 rounded-full transition-all duration-300 left-[3px] bg-white/40 plan-toggle-dot"></div>
+          </button>
+          <span class="text-[11px] font-medium text-white/30 plan-annual-label">Anual</span>
+          <span class="text-[10px] font-bold bg-emerald-500/15 text-emerald-300 px-2 py-0.5 rounded-full ml-1 plan-annual-savings" style="display:none">-2 meses gratis</span>
+        </div>
+        <div class="text-[12px] leading-[1.55] my-3 pb-4 border-b border-white/[0.08] text-white/50">Para ONGs em crescimento com multiplos doadores e equipe maior.</div>
+        <div class="mb-4">
+          <div class="text-[10px] font-bold tracking-[0.8px] uppercase text-white/30 mb-2">Limites</div>
+          <ul class="list-none flex flex-col gap-1.5">
+            <li class="flex items-center gap-2 text-[11.5px] text-white/45"><i data-lucide="gauge" class="w-3 h-3 text-white/25 flex-shrink-0"></i>4 usuarios</li>
+            <li class="flex items-center gap-2 text-[11.5px] text-white/45"><i data-lucide="gauge" class="w-3 h-3 text-white/25 flex-shrink-0"></i>3 projetos ONG</li>
+            <li class="flex items-center gap-2 text-[11.5px] text-white/45"><i data-lucide="gauge" class="w-3 h-3 text-white/25 flex-shrink-0"></i>15 colaboradores RH</li>
+            <li class="flex items-center gap-2 text-[11.5px] text-white/45"><i data-lucide="gauge" class="w-3 h-3 text-white/25 flex-shrink-0"></i>3 moedas (USD, EUR, GBP)</li>
+            <li class="flex items-center gap-2 text-[11.5px] text-white/45"><i data-lucide="gauge" class="w-3 h-3 text-white/25 flex-shrink-0"></i>Lancamentos ilimitados</li>
+            <li class="flex items-center gap-2 text-[11.5px] text-white/45"><i data-lucide="gauge" class="w-3 h-3 text-white/25 flex-shrink-0"></i>Backup CSV automatico mensal</li>
+          </ul>
+        </div>
+        <div class="mb-4">
+          <div class="text-[10px] font-bold tracking-[0.8px] uppercase text-white/30 mb-2">Inclui</div>
+          <ul class="list-none flex flex-col gap-1.5">
+            <li class="flex items-start gap-2 text-[12px]"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 mt-0.5 flex-shrink-0 text-amber-400"></i><span class="text-white/60">Tudo da Associacao</span></li>
+            <li class="flex items-start gap-2 text-[12px]"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 mt-0.5 flex-shrink-0 text-amber-400"></i><span class="text-white/60">Reconciliacao Bancaria</span></li>
+            <li class="flex items-start gap-2 text-[12px]"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 mt-0.5 flex-shrink-0 text-amber-400"></i><span class="text-white/60">Ordens de Compra</span></li>
+            <li class="flex items-start gap-2 text-[12px]"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 mt-0.5 flex-shrink-0 text-amber-400"></i><span class="text-white/60">Controle de Estoque & Inventario</span></li>
+            <li class="flex items-start gap-2 text-[12px]"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 mt-0.5 flex-shrink-0 text-amber-400"></i><span class="text-white/60">Modulo Fiscal (IVA, IRPC, IRPS)</span></li>
+            <li class="flex items-start gap-2 text-[12px]"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 mt-0.5 flex-shrink-0 text-amber-400"></i><span class="text-white/60">Imobilizados & Ativos</span></li>
+            <li class="flex items-start gap-2 text-[12px]"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 mt-0.5 flex-shrink-0 text-amber-400"></i><span class="text-white/60">Formacao & Desenvolvimento</span></li>
+            <li class="flex items-start gap-2 text-[12px]"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 mt-0.5 flex-shrink-0 text-amber-400"></i><span class="text-white/60">Relatorios PDF para doadores</span></li>
+          </ul>
+        </div>
+        <div class="mb-6">
+          <div class="text-[10px] font-bold tracking-[0.8px] uppercase text-red-400/50 mb-2">Nao inclui</div>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="text-[10.5px] bg-red-500/8 text-red-400/60 px-2 py-0.5 rounded-md border border-red-500/10 line-through">POS (Ponto de Venda)</span>
+          </div>
+        </div>
+        <a href="https://ademofinanca.vercel.app/?registo=1&plano=pro" target="_blank" class="plan-btn plan-btn-amber w-full flex items-center justify-center gap-2">
+          Experimentar 14 dias <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+      </div>
+
+      <!-- ═══ PLANO EMPRESARIAL ═══ -->
+      <div class="plan-card reveal-on-scroll">
+        <div class="flex items-center justify-between mb-4">
+          <span class="text-[9.5px] font-bold tracking-[1px] uppercase px-2.5 py-1 rounded-full inline-block bg-violet-500/15 text-violet-300">Sem limitacoes</span>
+          <span class="text-[20px]">&#127970;</span>
+        </div>
+        <div class="text-amber-400 mb-2"><i data-lucide="building-2" class="w-8 h-8"></i></div>
+        <div class="font-extrabold text-[21px] text-white mb-1">Empresarial</div>
+        <div class="flex items-baseline gap-1 mb-1">
+          <span class="text-[14px] font-semibold text-white/60 mt-1 inline-block" data-monthly-label>MT</span>
+          <span class="font-extrabold text-[33px] text-white leading-none plan-price-display" data-monthly="2.490" data-annual="24.900">2.490</span>
+          <span class="text-[13px] text-white/40 plan-period-display">/mes</span>
+        </div>
+        <div class="flex items-center gap-2 mb-3 plan-annual-toggle-row">
+          <span class="text-[11px] font-medium text-white/70 plan-monthly-label">Mensal</span>
+          <button class="plan-annual-toggle relative w-9 h-5 rounded-full transition-all duration-300 flex-shrink-0 cursor-pointer border-none bg-white/10" onclick="togglePlanPeriod(this)">
+            <div class="absolute top-[3px] w-3.5 h-3.5 rounded-full transition-all duration-300 left-[3px] bg-white/40 plan-toggle-dot"></div>
+          </button>
+          <span class="text-[11px] font-medium text-white/30 plan-annual-label">Anual</span>
+          <span class="text-[10px] font-bold bg-emerald-500/15 text-emerald-300 px-2 py-0.5 rounded-full ml-1 plan-annual-savings" style="display:none">-2 meses gratis</span>
+        </div>
+        <div class="text-[12px] leading-[1.55] my-3 pb-4 border-b border-white/[0.06] text-white/50">Para grandes organizacoes sem limitacoes.</div>
+        <div class="mb-4">
+          <div class="text-[10px] font-bold tracking-[0.8px] uppercase text-white/30 mb-2">Limites</div>
+          <ul class="list-none flex flex-col gap-1.5">
+            <li class="flex items-center gap-2 text-[11.5px] text-white/45"><i data-lucide="gauge" class="w-3 h-3 text-white/25 flex-shrink-0"></i>Utilizadores ilimitados</li>
+            <li class="flex items-center gap-2 text-[11.5px] text-white/45"><i data-lucide="gauge" class="w-3 h-3 text-white/25 flex-shrink-0"></i>Projetos ilimitados</li>
+            <li class="flex items-center gap-2 text-[11.5px] text-white/45"><i data-lucide="gauge" class="w-3 h-3 text-white/25 flex-shrink-0"></i>Colaboradores ilimitados</li>
+            <li class="flex items-center gap-2 text-[11.5px] text-white/45"><i data-lucide="gauge" class="w-3 h-3 text-white/25 flex-shrink-0"></i>Todas as moedas</li>
+            <li class="flex items-center gap-2 text-[11.5px] text-white/45"><i data-lucide="gauge" class="w-3 h-3 text-white/25 flex-shrink-0"></i>Lancamentos ilimitados</li>
+            <li class="flex items-center gap-2 text-[11.5px] text-white/45"><i data-lucide="gauge" class="w-3 h-3 text-white/25 flex-shrink-0"></i>Backup PITR 7 dias + Cloud</li>
+          </ul>
+        </div>
+        <div class="mb-4">
+          <div class="text-[10px] font-bold tracking-[0.8px] uppercase text-white/30 mb-2">Inclui</div>
+          <ul class="list-none flex flex-col gap-1.5">
+            <li class="flex items-start gap-2 text-[12px]"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 mt-0.5 flex-shrink-0 text-violet-400"></i><span class="text-white/60">TODOS os modulos do sistema</span></li>
+            <li class="flex items-start gap-2 text-[12px]"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 mt-0.5 flex-shrink-0 text-violet-400"></i><span class="text-white/60">POS (Ponto de Venda)</span></li>
+            <li class="flex items-start gap-2 text-[12px]"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 mt-0.5 flex-shrink-0 text-violet-400"></i><span class="text-white/60">Suporte dedicado</span></li>
+            <li class="flex items-start gap-2 text-[12px]"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 mt-0.5 flex-shrink-0 text-violet-400"></i><span class="text-white/60">Formacao incluida</span></li>
+            <li class="flex items-start gap-2 text-[12px]"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 mt-0.5 flex-shrink-0 text-violet-400"></i><span class="text-white/60">Relatorios avancados</span></li>
+            <li class="flex items-start gap-2 text-[12px]"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 mt-0.5 flex-shrink-0 text-violet-400"></i><span class="text-white/60">API Personalizada</span></li>
+            <li class="flex items-start gap-2 text-[12px]"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 mt-0.5 flex-shrink-0 text-violet-400"></i><span class="text-white/60">Multi-filial</span></li>
+            <li class="flex items-start gap-2 text-[12px]"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 mt-0.5 flex-shrink-0 text-violet-400"></i><span class="text-white/60">SLA garantido</span></li>
+          </ul>
+        </div>
+        <a href="https://ademofinanca.vercel.app/?registo=1&plano=enterprise" target="_blank" class="plan-btn plan-btn-violet w-full flex items-center justify-center gap-2">
+          Falar com Vendas <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- CTA Banner -->
+    <div class="max-w-[1200px] mx-auto bg-gradient-to-br from-[#0b1120] to-[#0e1628] border border-white/[0.08] rounded-[22px] p-7 flex flex-col sm:flex-row items-center gap-5 relative overflow-hidden reveal-on-scroll">
+      <div class="absolute right-[-50px] top-[-50px] w-[180px] h-[180px] rounded-full pointer-events-none" style="background: radial-gradient(circle, rgba(245,158,11,0.08), transparent)"></div>
+      <div class="text-[34px] flex-shrink-0">&#128640;</div>
+      <div class="flex-1 text-center sm:text-left">
+        <div class="font-bold text-[17px] text-white mb-1">Teste 14 dias gratis</div>
+        <div class="text-[12.5px] text-white/50">Sem cartao de credito. Sem compromisso. Acesso completo a todos os modulos.</div>
+        <div class="flex gap-2 flex-wrap mt-2.5 justify-center sm:justify-start">
+          <span class="bg-amber-500/15 text-amber-200 text-[10.5px] font-semibold px-2.5 py-1 rounded-full">Selagem SHA-1</span>
+          <span class="bg-sky-500/15 text-sky-200 text-[10.5px] font-semibold px-2.5 py-1 rounded-full">SAF-T MZ</span>
+          <span class="bg-slate-500/15 text-slate-200 text-[10.5px] font-semibold px-2.5 py-1 rounded-full">Suporte Prioritario</span>
+        </div>
+      </div>
+      <a href="https://wa.me/258849371782?text=Ola!%20Quero%20testar%20o%20ContaFacil%20ERP%20por%2014%20dias%20gratis" target="_blank" class="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500 to-amber-400 text-gray-900 no-underline px-5 py-3 rounded-xl text-[13.5px] font-semibold transition-all duration-300 shadow-lg shadow-amber-500/30 hover:from-amber-400 hover:to-amber-300 hover:-translate-y-0.5 flex-shrink-0">
+        Comecar Agora
+        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SOBRE
+       ═══════════════════════════════════════════ -->
+  <section id="sobre" class="section-ice py-24 px-[5%]">
+    <div class="max-w-[980px] mx-auto grid grid-cols-1 md:grid-cols-[260px_1fr] gap-14 items-start reveal-on-scroll">
+      <div class="flex flex-col items-center gap-4">
+        <div class="w-[190px] h-[190px] rounded-full bg-gradient-to-br from-slate-700 to-slate-500 flex items-center justify-center font-extrabold text-[60px] text-white shadow-2xl shadow-black/30 relative">
+          <div class="absolute inset-[-8px] rounded-full border-2 border-transparent" style="background: linear-gradient(135deg, #f59e0b, transparent, #38bdf8) border-box; mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0); -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0); -webkit-mask-composite: exclude; mask-composite: exclude;"></div>
+          CF
+        </div>
+        <div class="font-extrabold text-[20px] text-white text-center">ContaFacil</div>
+        <div class="text-[12.5px] text-white/35 text-center leading-[1.5]">Sistema de Gestao Empresarial<br>Desenvolvido em Mocambique</div>
+        <div class="flex gap-2 flex-wrap justify-center">
+          <div class="flex items-center gap-1.5 bg-white/[0.04] border border-white/[0.08] text-white/50 text-[12px] font-semibold px-3 py-1.5 rounded-lg">
+            <i data-lucide="building-2" class="w-3.5 h-3.5 text-amber-500"></i>
+            Beira, Sofala
+          </div>
+          <div class="flex items-center gap-1.5 bg-white/[0.04] border border-white/[0.08] text-white/50 text-[12px] font-semibold px-3 py-1.5 rounded-lg">
+            <i data-lucide="shield" class="w-3.5 h-3.5 text-amber-500"></i>
+            AT Certificado
+          </div>
+        </div>
+        <div class="flex flex-col gap-1.5 text-[12px] text-white/30 mt-2">
+          <a href="mailto:jqmjaime782@gmail.com" class="hover:text-amber-400 transition-colors no-underline text-white/30">jqmjaime782@gmail.com</a>
+          <a href="tel:+258849371782" class="hover:text-amber-400 transition-colors no-underline text-white/30">+258849371782</a>
+        </div>
+      </div>
+      <div>
+        <h2 class="text-[1.9rem] font-extrabold text-white mb-5 tracking-[-0.5px]">
+          Sobre o <span class="bg-gradient-to-r from-blue-300 via-sky-200 to-white bg-clip-text text-transparent">ContaFacil ERP</span>
+        </h2>
+        <div class="bg-gradient-to-br from-amber-500/[0.06] to-amber-500/[0.02] border-l-4 border-amber-500 rounded-r-xl p-5 mb-5 text-[15px] italic text-white/80 leading-[1.7] font-medium">
+          "Construir uma solucao que verdadeiramente entende as necessidades das empresas e ONGs mocambicanas — este e o nosso proposito."
+        </div>
+        <p class="text-[14.5px] text-white/50 leading-[1.8] mb-3.5">
+          O <strong class="text-white">ContaFacil ERP</strong> nasceu na cidade da <strong class="text-white">Beira</strong>, provincia de Sofala, da necessidade real de empresarios e gestores de ONGs em Mocambique que precisavam de um sistema de gestao adaptado a realidade local. Diferente de solucoes estrangeiras, o ContaFacil foi pensado desde o primeiro dia para lidar com os regimes fiscais mocambicanos, a selagem digital da AT, e as necessidades especificas do mercado local.
+        </p>
+        <p class="text-[14.5px] text-white/50 leading-[1.8] mb-3.5">
+          A nossa abordagem <strong class="text-white">100% modular</strong> significa que cada organizacao paga apenas pelo que utiliza. Um micro-negocio pode comecar com o plano gratuito e escalar conforme cresce. Uma ONG pode ativar apenas os modulos de gestao de subvencoes. Esta flexibilidade e unica no mercado mocambicano.
+        </p>
+        <p class="text-[14.5px] text-white/50 leading-[1.8]">
+          Hoje, organizacoes como a <strong class="text-white">ADEMO</strong> (Associacao dos Deficientes Mocambicano), a <strong class="text-white">ASSEF</strong> (Associacao Solidaria Esperanca para o Futuro) e a <strong class="text-white">Chambes Multiservices</strong> ja confiam no ContaFacil para a sua gestao diaria.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       DEPOIMENTOS
+       ═══════════════════════════════════════════ -->
+  <section id="depoimentos" class="section-ice py-24 px-[5%]">
+    <div class="text-center max-w-[560px] mx-auto mb-14 reveal-on-scroll">
+      <h2 class="text-[clamp(1.9rem,3.8vw,2.9rem)] font-extrabold text-white mb-4 tracking-[-0.5px]">
+        Quem ja <span class="bg-gradient-to-r from-blue-300 via-sky-200 to-white bg-clip-text text-transparent">confia em nos</span>
+      </h2>
+      <p class="text-[16px] text-white/50 leading-[1.75]">
+        Empresas e ONGs de Mocambique ja usam o ContaFacil para a sua gestao diaria.
+      </p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 max-w-[1200px] mx-auto">
+      <!-- Testimonial 1 -->
+      <div class="testimonial-card reveal-on-scroll">
+        <i data-lucide="quote" class="absolute top-5 right-6 w-12 h-12 text-white/[0.04]"></i>
+        <div class="flex gap-1 mb-4">
+          <i data-lucide="star" class="w-[13px] h-[13px] text-amber-400 fill-amber-400"></i>
+          <i data-lucide="star" class="w-[13px] h-[13px] text-amber-400 fill-amber-400"></i>
+          <i data-lucide="star" class="w-[13px] h-[13px] text-amber-400 fill-amber-400"></i>
+          <i data-lucide="star" class="w-[13px] h-[13px] text-amber-400 fill-amber-400"></i>
+          <i data-lucide="star" class="w-[13px] h-[13px] text-amber-400 fill-amber-400"></i>
+        </div>
+        <p class="text-[14px] text-white/50 leading-[1.7] mb-5 italic">O ContaFacil revolucionou a nossa gestao financeira. Como associacao sem fins lucrativos, precisavamos de um sistema que entendesse as exigencias dos nossos doadores internacionais. Os relatorios de subvencoes e a prestacao de contas automatica pouparam-nos centenas de horas de trabalho manual.</p>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-slate-600 to-slate-400 flex items-center justify-center font-bold text-[14px] text-white flex-shrink-0">AD</div>
+          <div>
+            <div class="text-[13.5px] font-bold text-white">Ademo</div>
+            <div class="text-[11.5px] text-white/35">Associacao dos Deficientes Mocambicanos</div>
+          </div>
+        </div>
+      </div>
+      <!-- Testimonial 2 -->
+      <div class="testimonial-card reveal-on-scroll">
+        <i data-lucide="quote" class="absolute top-5 right-6 w-12 h-12 text-white/[0.04]"></i>
+        <div class="flex gap-1 mb-4">
+          <i data-lucide="star" class="w-[13px] h-[13px] text-amber-400 fill-amber-400"></i>
+          <i data-lucide="star" class="w-[13px] h-[13px] text-amber-400 fill-amber-400"></i>
+          <i data-lucide="star" class="w-[13px] h-[13px] text-amber-400 fill-amber-400"></i>
+          <i data-lucide="star" class="w-[13px] h-[13px] text-amber-400 fill-amber-400"></i>
+          <i data-lucide="star" class="w-[13px] h-[13px] text-amber-400 fill-amber-400"></i>
+        </div>
+        <p class="text-[14px] text-white/50 leading-[1.7] mb-5 italic">Gerimos varios projectos sociais na provincia de Sofala e o ContaFacil permitiu-nos ter controlo total sobre cada fundo. A capacidade de gerar relatorios por doador e por projeto mudou completamente a forma como prestamos contas. Os nossos doadores ficaram impressionados com a transparencia.</p>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-slate-600 to-slate-400 flex items-center justify-center font-bold text-[14px] text-white flex-shrink-0">AS</div>
+          <div>
+            <div class="text-[13.5px] font-bold text-white">ASSEF</div>
+            <div class="text-[11.5px] text-white/35">Associacao Solidaria Esperanca para o Futuro</div>
+          </div>
+        </div>
+      </div>
+      <!-- Testimonial 3 -->
+      <div class="testimonial-card reveal-on-scroll">
+        <i data-lucide="quote" class="absolute top-5 right-6 w-12 h-12 text-white/[0.04]"></i>
+        <div class="flex gap-1 mb-4">
+          <i data-lucide="star" class="w-[13px] h-[13px] text-amber-400 fill-amber-400"></i>
+          <i data-lucide="star" class="w-[13px] h-[13px] text-amber-400 fill-amber-400"></i>
+          <i data-lucide="star" class="w-[13px] h-[13px] text-amber-400 fill-amber-400"></i>
+          <i data-lucide="star" class="w-[13px] h-[13px] text-amber-400 fill-amber-400"></i>
+          <i data-lucide="star" class="w-[13px] h-[13px] text-amber-400 fill-amber-400"></i>
+        </div>
+        <p class="text-[14px] text-white/50 leading-[1.7] mb-5 italic">Como empresa de servicos multiplas na Beira, precisavamos de um ERP que gerisse vendas, stock e contabilidade num so sistema. O POS offline-first foi decisivo — durante os cortes de energia continuamos a vender sem perder nenhum dado. A selagem digital SHA-1 da-nos total tranquilidade.</p>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-slate-600 to-slate-400 flex items-center justify-center font-bold text-[14px] text-white flex-shrink-0">CM</div>
+          <div>
+            <div class="text-[13.5px] font-bold text-white">Chambes Multiservices</div>
+            <div class="text-[11.5px] text-white/35">Chambes Multiservices, Lda</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       CTA FINAL
+       ═══════════════════════════════════════════ -->
+  <section id="cta" class="relative overflow-hidden bg-[#0b1120] py-24 px-[5%]">
+    <div class="absolute inset-0" style="background: radial-gradient(circle at 30% 50%, rgba(37,99,235,0.06), transparent 50%), radial-gradient(circle at 70% 50%, rgba(255,255,255,0.02), transparent 50%)"></div>
+    <div class="relative z-10 max-w-[700px] mx-auto text-center reveal-on-scroll">
+      <h2 class="text-[clamp(1.9rem,3.8vw,3rem)] font-extrabold text-white tracking-[-0.5px] mb-5">
+        Pronto para <span class="bg-gradient-to-r from-amber-400 via-amber-300 to-white bg-clip-text text-transparent">transformar</span> a sua gestao?
+      </h2>
+      <p class="text-[16px] text-white/50 mb-10 leading-[1.7]">
+        Junte-se a empresas e ONGs de Mocambique que ja usam o ContaFacil ERP. Comece gratis hoje.
+      </p>
+      <div class="flex gap-3 justify-center flex-wrap">
+        <a href="https://wa.me/258849371782?text=Ola!%20Quero%20comecar%20a%20usar%20o%20ContaFacil%20ERP" target="_blank" class="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500 to-amber-400 text-gray-900 no-underline px-7 py-3.5 rounded-xl text-[15px] font-semibold transition-all duration-300 shadow-lg shadow-amber-500/30 hover:from-amber-400 hover:to-amber-300 hover:-translate-y-0.5">
+          <i data-lucide="message-circle" class="w-4 h-4"></i>
+          Solicitar Demonstracao
+        </a>
+        <a href="mailto:jqmjaime782@gmail.com" class="inline-flex items-center gap-2 bg-transparent border-[1.5px] border-white/[0.12] text-slate-300 no-underline px-6 py-3 rounded-xl text-[15px] font-medium transition-all duration-300 hover:border-white/25 hover:bg-white/[0.04] hover:-translate-y-0.5">
+          <i data-lucide="wallet" class="w-4 h-4"></i>
+          jqmjaime782@gmail.com
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+       ═══════════════════════════════════════════ -->
+  <footer class="bg-[#030a17] py-11 px-[5%]">
+    <div class="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 items-start">
+      <div>
+        <a href="#hero" class="flex items-center gap-2.5 no-underline mb-3">
+          <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-slate-600 to-slate-400 flex items-center justify-center font-extrabold text-[12px] text-white">CF</div>
+          <span class="font-bold text-[15px] text-white">Conta<span class="text-amber-400">Facil</span></span>
+        </a>
+        <p class="text-[11.5px] text-white/25 mt-1">O ERP 100% mocambicano.</p>
+        <p class="text-[11.5px] text-white/18 mt-1">Beira, Sofala</p>
+      </div>
+      <div>
+        <div class="font-bold text-[12px] text-white/45 tracking-[0.8px] uppercase mb-3.5">Produto</div>
+        <ul class="list-none flex flex-col gap-2">
+          <li><a href="#modulos" class="text-[13px] text-white/30 hover:text-amber-400 transition-colors no-underline">Modulos</a></li>
+          <li><a href="#dashboard-ao-vivo" class="text-[13px] text-white/30 hover:text-amber-400 transition-colors no-underline">Dashboard</a></li>
+          <li><a href="#relatorios" class="text-[13px] text-white/30 hover:text-amber-400 transition-colors no-underline">Relatorios</a></li>
+          <li><a href="#pos" class="text-[13px] text-white/30 hover:text-amber-400 transition-colors no-underline">POS</a></li>
+          <li><a href="#planos" class="text-[13px] text-white/30 hover:text-amber-400 transition-colors no-underline">Planos & Precos</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="font-bold text-[12px] text-white/45 tracking-[0.8px] uppercase mb-3.5">Contacto</div>
+        <a href="mailto:jqmjaime782@gmail.com" class="font-bold text-[14px] text-amber-400 no-underline hover:text-amber-300 transition-colors block mb-1">jqmjaime782@gmail.com</a>
+        <a href="tel:+258849371782" class="text-[13px] text-white/40 hover:text-amber-400 transition-colors no-underline block mb-1">+258849371782</a>
+        <p class="text-[11px] text-white/18 mt-1">Suporte via WhatsApp 24/7</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/258849371782?text=Ola!%20Preciso%20de%20ajuda%20com%20o%20ContaFacil%20ERP" target="_blank" class="whatsapp-float">
+    <div class="whatsapp-pulse"></div>
+    <i data-lucide="message-circle" class="w-6 h-6 relative z-10 text-white"></i>
+  </a>
+
+  <!-- Image Modal -->
+  <div id="image-modal" class="fixed inset-0 z-[9998] bg-black/80 backdrop-blur-sm items-center justify-center p-4" style="display: none;" onclick="closeModal()">
+    <div class="relative max-w-[90vw] max-h-[90vh] w-full" onclick="event.stopPropagation()">
+      <button onclick="closeModal()" class="absolute -top-12 right-0 text-white/60 hover:text-white bg-transparent border-none cursor-pointer text-[14px] font-medium flex items-center gap-2">
+        Fechar <i data-lucide="x" class="w-4 h-4"></i>
+      </button>
+      <img id="modal-img" src="" alt="" class="w-full h-auto rounded-2xl border border-white/[0.08] shadow-2xl shadow-black/30">
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
